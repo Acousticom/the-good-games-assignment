@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="">
         <Navbar />
-      <div className="flex flex-wrap justify-center gap-4 mt-24">
+      <div className="flex flex-wrap justify-center gap-4 mt-32 md:mt-24">
         {loading && [...Array(8)].map((arr) => <ShimmerCard />)}
         {filteredProducts?.map((data) => (
           <ProductsCard data={data} key={data.id} />
