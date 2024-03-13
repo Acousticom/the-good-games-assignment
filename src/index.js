@@ -1,13 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { DataProvider } from "./context/DataContext";
+import { Toaster } from "react-hot-toast";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <DataProvider>
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        containerStyle={{
+          top: "1rem",
+          right: "1rem",
+          fontSize: "0.9rem",
+        }}
+      />
+      <App />
+    </DataProvider>
   </React.StrictMode>
 );
 
